@@ -13,11 +13,6 @@
 
 @(subscription: Subscription[ContentSubscription], promotion: Option[AnyPromotion] = None)
 <div class="review-panel">
-
-    <input type="hidden" name="subscriptionDetails"
-           data-amount="0"
-           data-number-of-months="@subscription.firstPlan.charges.billingPeriod.monthsInPeriod">
-
     <div class="review-panel__item">
         <h4 class="review-panel__label">Subscriber ID:</h4>
         <div class="review-panel__details">@subscription.name.get</div>
