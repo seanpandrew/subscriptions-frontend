@@ -43,7 +43,7 @@ module.exports = function(debug) { return {
                         }]
                     ],
                     cacheDirectory: '',
-                    plugins: ["transform-flow-strip-types", ["transform-runtime", {
+                    plugins: ["transform-object-rest-spread","transform-flow-strip-types", ["transform-runtime", {
                         "helpers": false,
                         "polyfill": false,
                         "regenerator": true,
@@ -90,8 +90,7 @@ module.exports = function(debug) { return {
     failOnError: true,
     watch: false,
     keepalive: false,
-    inline: true,
-    
+     
     stats: {
         modules: true,
         reasons: true,
