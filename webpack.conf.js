@@ -4,7 +4,7 @@ var webpack = require("webpack");
 
 var path = require('path');
 
-module.exports = function() { return {
+module.exports = function(debug) { return {
     resolve: {
         modules: [
           path.resolve(__dirname, "node_modules"),
@@ -77,6 +77,14 @@ module.exports = function() { return {
             }
         ]
     },
+    plugins: !debug ? [
+        new webpack.DefinePlugin({
+            'process.env':{
+                'NODE_ENV': JSON.stringify('production')
+            }
+        }),
+        new Uglify({compress: {warnings: false}})
+    ] : [],
 
     progress: true,
     failOnError: true,
