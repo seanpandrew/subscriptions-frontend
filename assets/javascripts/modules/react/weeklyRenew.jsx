@@ -15,7 +15,7 @@ import {
 } from 'modules/renew/renew'
 
 
-import SwitchButton from 'babel?presets[]=react&presets[]=es2015!react-switch-button'; //This ensures that this module gets correctly transpiled.
+import SwitchButton from 'babel-loader?presets[]=react&presets[]=es2015!react-switch-button'; //This ensures that this module gets correctly transpiled.
 const empty = {
     value: '',
     isValid: false

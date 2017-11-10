@@ -1,6 +1,5 @@
 module.exports = function(grunt) {
     'use strict';
-
     require('time-grunt')(grunt);
 
     /**
@@ -14,6 +13,9 @@ module.exports = function(grunt) {
      * Load all grunt-* tasks
      */
     require('load-grunt-tasks')(grunt);
+    
+    //load path for absolute paths
+    var path = require('path');
 
     if (isDev) {
         grunt.log.subhead('Running Grunt in DEV mode');
@@ -146,7 +148,7 @@ module.exports = function(grunt) {
             options: require('./webpack.conf.js')(isDev),
             frontend: {
                 output: {
-                    path: 'public/',
+                    path: path.resolve('public/'),
                     chunkFilename:  'webpack/[chunkhash].js',
                     filename: "javascripts/[name].min.js",
                     publicPath: '/assets/'
